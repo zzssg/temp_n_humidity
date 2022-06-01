@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id "io.freefair.lombok" version "4.1.6"
+	id 'java'
+}
+
+group = 'org.zzssg.smarthome'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.2.4.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:2.2.4.RELEASE'
+	implementation 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+	implementation 'org.hibernate:hibernate-validator:6.0.16.Final'
+	testImplementation('org.springframework.boot:spring-boot-starter-test:2.2.4.RELEASE') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+	useJUnitPlatform()
+}
